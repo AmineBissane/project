@@ -8,26 +8,29 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #ffffff;
+  color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Update the purple color */
-  --primary: 0 0% 0%; /* Black */
-  --primary-foreground: 0 0% 98%; /* Keep foreground white for contrast */
+  --primary: 0 0% 0%;
+  --primary-foreground: 0 0% 98%;
+}
+
+.dark {
+  background-color: #000000;
+  color: #ffffff;
+
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 0%;
 }
 
 a {
   font-weight: 500;
-  color: #fafafa;
   text-decoration: inherit;
-}
-a:hover {
-  color: #fdfdfd;
 }
 
 body {
@@ -51,33 +54,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #ffffff; /* Change hover border color to white */
-  color: #ffffff; /* Optional: Change text color to white */
-  background-color: inherit; /* Ensure background remains consistent */
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-
-    --primary: 0 0% 0%; /* Black */
-  }
-  a:hover {
-    color: #fafafa;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 @layer base {
@@ -88,8 +66,8 @@ button:focus-visible {
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 0%; /* Black */
-    --primary-foreground: 0 0% 98%; /* Keep foreground white for contrast */
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
@@ -108,6 +86,7 @@ button:focus-visible {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -143,10 +122,6 @@ button:focus-visible {
   body {
     @apply bg-background text-foreground;
   }
-}
-
-body {
-  @apply flex flex-col items-center justify-center min-h-screen bg-background text-foreground;
 }
 
 .container {

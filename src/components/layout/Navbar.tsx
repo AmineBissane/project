@@ -1,11 +1,21 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin } from 'lucide-react';
+import { MapPin, Menu, X, Moon, Sun } from 'lucide-react';
+import { useTheme } from '@/hooks/use-theme';
+import { Button } from '@/components/ui/button';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Navbar = () => {
+  const { theme, setTheme } = useTheme();
+  const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
-      // Scroll logic can be added here if needed in the future
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -14,20 +24,81 @@ const Navbar = () => {
     };
   }, []);
 
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-md py-2">
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2">
-          <MapPin size={28} className="text-black" strokeWidth={2} />
-          <span className="font-bold text-xl md:text-2xl text-black">Andalux Transfers</span>
-        </Link>
-        <div className="hidden md:flex items-center gap-8">
-          <Link to="/" className="text-black hover:text-primary transition-colors">
-            Home
+    <nav className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b transition-all duration-200 ${
+      isScrolled ? 'shadow-md' : ''
+    }`}>
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          <Link to="/" className="flex items-center gap-2">
+            <MapPin size={28} className="text-primary" strokeWidth={2} />
+            <span className="font-bold text-xl md:text-2xl text-primary">Andalux Transfers</span>
           </Link>
-          <Link to="/services" className="text-black hover:text-primary transition-colors">
-            Services
-          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            <Link to="/" className="text-foreground hover:text-primary transition-colors">
+              Home
+            </Link>
+            <Link to="/services" className="text-foreground hover:text-primary transition-colors">
+              Services
+            </Link>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="ml-2"
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="md:hidden flex items-center gap-4">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="mr-2"
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <div className="flex flex-col gap-4 mt-8">
+                  <Link 
+                    to="/" 
+                    className="text-foreground hover:text-primary transition-colors text-lg py-2"
+                  >
+                    Home
+                  </Link>
+                  <Link 
+                    to="/services" 
+                    className="text-foreground hover:text-primary transition-colors text-lg py-2"
+                  >
+                    Services
+                  </Link>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </nav>
