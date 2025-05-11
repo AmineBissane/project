@@ -1,7 +1,13 @@
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 
 const WelcomeHeader = () => {
+  const scrollToFleet = () => {
+    const fleetSection = document.querySelector('#luxury-fleet');
+    if (fleetSection) {
+      fleetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative min-h-[85vh] flex items-center justify-center bg-background border-b">
       <div className="container mx-auto px-4 text-center">
@@ -12,8 +18,12 @@ const WelcomeHeader = () => {
           Experience the perfect blend of comfort, reliability, and luxury with our premium taxi service throughout Luxembourg and beyond.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg">
-            <Link to="/booking">Book Now</Link>
+          <Button
+            size="lg"
+            onClick={scrollToFleet}
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
+          >
+            Book Now
           </Button>
         </div>
       </div>
