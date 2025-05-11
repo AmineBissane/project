@@ -14,9 +14,9 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ vehicle }) => {
     <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg group h-full flex flex-col">
       <div className="relative h-48 bg-muted flex items-center justify-center">
         {vehicle.type === 'car' ? (
-          <Car className="h-24 w-24 text-primary" />
+          <Car className="h-24 w-24 text-primary" strokeWidth={1.5} />
         ) : (
-          <Bus className="h-24 w-24 text-primary" />
+          <Bus className="h-24 w-24 text-primary" strokeWidth={1.5} />
         )}
         <div className="absolute top-3 right-3 bg-background/80 backdrop-blur-sm text-foreground px-3 py-1 rounded-full flex items-center">
           <Users size={16} className="mr-1" />
@@ -43,7 +43,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ vehicle }) => {
             <span className="text-sm text-muted-foreground">Starting from</span>
             <span className="font-bold text-lg">{vehicle.pricePerKm.toFixed(2)} €/km</span>
           </div>
-          <Button asChild className="w-full">
+          <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
             <Link to={`/category/${vehicle.type}`}>Select & Book</Link>
           </Button>
         </div>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import BookingForm from '@/components/booking/BookingForm';
 import { VehicleType, vehicles } from '@/types/booking';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Car, Bus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const CategoryPage: React.FC = () => {
@@ -28,17 +28,27 @@ const CategoryPage: React.FC = () => {
     <div className="min-h-screen pt-20 pb-16">
       <div className="container mx-auto px-4">
         <Button 
-          className="bg-white text-black hover:bg-gray-200 border border-gray-300"
+          variant="outline"
           size="sm" 
           onClick={() => navigate(-1)}
+          className="mb-6"
         >
           <ArrowLeft size={16} className="mr-2" />
           Back
         </Button>
         
         <div className="max-w-4xl mx-auto bg-card border border-border rounded-lg shadow-sm p-6 md:p-8">
-          <h1 className="text-2xl md:text-3xl font-bold mb-2">Book Your {vehicle.name}</h1>
-          <p className="text-muted-foreground mb-8">Fill in your details below to book your {vehicleType === 'car' ? 'luxury sedan' : 'premium van'} ride.</p>
+          <div className="flex items-center gap-4 mb-6">
+            {vehicleType === 'car' ? (
+              <Car className="h-12 w-12 text-primary" />
+            ) : (
+              <Bus className="h-12 w-12 text-primary" />
+            )}
+            <div>
+              <h1 className="text-2xl md:text-3xl font-bold">Book Your {vehicle.name}</h1>
+              <p className="text-muted-foreground">Fill in your details below to book your {vehicleType === 'car' ? 'luxury sedan' : 'premium van'} ride.</p>
+            </div>
+          </div>
           
           <BookingForm vehicleType={vehicleType} vehicle={vehicle} />
         </div>
