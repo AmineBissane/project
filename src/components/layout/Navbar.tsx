@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Menu, Moon, Sun } from 'lucide-react';
-import { useTheme } from '@/hooks/use-theme';
+import { MapPin, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -10,7 +9,6 @@ import {
 } from "@/components/ui/sheet";
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -23,10 +21,6 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border transition-all duration-200 ${
@@ -47,34 +41,10 @@ const Navbar = () => {
             <Link to="/services" className="text-foreground hover:text-primary transition-colors">
               Services
             </Link>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={toggleTheme}
-              className="ml-2 border-primary"
-            >
-              {theme === 'dark' ? (
-                <Sun className="h-[1.2rem] w-[1.2rem]" />
-              ) : (
-                <Moon className="h-[1.2rem] w-[1.2rem]" />
-              )}
-            </Button>
           </div>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden flex items-center gap-4">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={toggleTheme}
-              className="mr-2 border-primary"
-            >
-              {theme === 'dark' ? (
-                <Sun className="h-[1.2rem] w-[1.2rem]" />
-              ) : (
-                <Moon className="h-[1.2rem] w-[1.2rem]" />
-              )}
-            </Button>
+          <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon" className="border-primary">
