@@ -47,8 +47,8 @@ const Navbar = () => {
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="border-primary">
-                  <Menu className="h-[1.2rem] w-[1.2rem]" />
+                <Button variant="outline" size="icon">
+                  <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background border-l border-border">
