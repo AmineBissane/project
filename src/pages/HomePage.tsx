@@ -9,11 +9,10 @@ import { vehicles } from '@/types/booking';
 const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
       <WelcomeHeader />
       
       {/* Vehicle Categories */}
-      <section className="py-16 bg-muted/30">
+      <section id="luxury-fleet" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Luxury Fleet</h2>

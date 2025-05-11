@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center gap-2">
             <MapPin size={28} className="text-primary" strokeWidth={2} />
-            <span className="font-bold text-xl md:text-2xl text-primary">Andalux Transfers</span>
+            <span className="font-bold text-xl md:text-2xl text-foreground">Andalux Transfers</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -54,9 +54,9 @@ const Navbar = () => {
               className="ml-2 border-primary"
             >
               {theme === 'dark' ? (
-                <Sun className="h-5 w-5 text-primary" />
+                <Sun className="h-[1.2rem] w-[1.2rem]" />
               ) : (
-                <Moon className="h-5 w-5 text-primary" />
+                <Moon className="h-[1.2rem] w-[1.2rem]" />
               )}
             </Button>
           </div>
@@ -70,15 +70,15 @@ const Navbar = () => {
               className="mr-2 border-primary"
             >
               {theme === 'dark' ? (
-                <Sun className="h-5 w-5 text-primary" />
+                <Sun className="h-[1.2rem] w-[1.2rem]" />
               ) : (
-                <Moon className="h-5 w-5 text-primary" />
+                <Moon className="h-[1.2rem] w-[1.2rem]" />
               )}
             </Button>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon" className="border-primary">
-                  <Menu className="h-6 w-6 text-primary" />
+                  <Menu className="h-[1.2rem] w-[1.2rem]" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background border-l border-border">
