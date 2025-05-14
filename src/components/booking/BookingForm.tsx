@@ -173,11 +173,11 @@ const BookingForm: React.FC<BookingFormProps> = ({ vehicleType, vehicle }) => {
         price: routeDetails?.price || 0
       };
 
-      console.log('Attempting to send reservation data to http://localhost:8080/api/reservations');
+      console.log('Attempting to send reservation data to http://3.64.55.202:8080/api/reservations');
       console.log('Reservation data:', reservationData);
 
       // Send the data to the API
-      const response = await fetch('http://localhost:8080/api/reservations', {
+      const response = await fetch('http://3.64.55.202:8080/api/reservations', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
