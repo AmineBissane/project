@@ -261,7 +261,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
       
-      {/* CTA Section */}
+      {/* CTA Section 
       <section className="py-16 relative">
         <div className="absolute inset-0 z-0 bg-cover bg-center brightness-[0.25]" style={{ backgroundImage: "url('https://images.pexels.com/photos/243206/pexels-photo-243206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" }} />
         <div className="container mx-auto px-4 relative z-10">
@@ -275,7 +275,7 @@ const HomePage: React.FC = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </section>*/}
     </div>
   );
 };
