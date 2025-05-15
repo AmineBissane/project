@@ -174,19 +174,22 @@ const BookingForm: React.FC<BookingFormProps> = ({ vehicleType, vehicle }) => {
       };
 
       const API_URL = 'http://3.64.55.202:8080/api/reservations';
-      const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
 
       console.log('Attempting to send reservation data to:', API_URL);
       console.log('Reservation data:', reservationData);
 
-      // Send the data to the API through CORS proxy
-      const response = await fetch(CORS_PROXY + API_URL, {
+      // Send the data to the API
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          'Origin': window.location.origin
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST',
+          'Access-Control-Allow-Headers': 'Content-Type'
         },
+        mode: 'cors',
+        credentials: 'omit',
         body: JSON.stringify(reservationData),
       });
 
