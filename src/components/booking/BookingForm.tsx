@@ -173,7 +173,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ vehicleType, vehicle }) => {
         price: routeDetails?.price || 0
       };
 
-      const API_URL = 'http://3.64.55.202:8080/api/reservations';
+      const API_URL = 'https://3.64.55.202/api/reservations';
 
       console.log('Attempting to send reservation data to:', API_URL);
       console.log('Reservation data:', reservationData);
