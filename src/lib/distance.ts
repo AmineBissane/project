@@ -34,7 +34,7 @@ async function geocodeAddress(address: string): Promise<GeocodedLocation | null>
       {
         headers: {
           'Accept': 'application/json',
-          'User-Agent': 'TranslateLux Taxi Service' // Required by Nominatim's terms of use
+          'User-Agent': 'Andevia Transfers Service' // Required by Nominatim's terms of use
         }
       }
     );

@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center gap-2">
             <MapPin size={28} className="text-primary" strokeWidth={2} />
-            <span className="font-bold text-xl md:text-2xl text-foreground">Andalux Transfers</span>
+            <span className="font-bold text-xl md:text-2xl text-foreground">Andevia Transfers</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -48,7 +48,7 @@ const Navbar = () => {
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon">
-                  <Menu className="h-5 w-5" />
+                  <Menu className="h-6 w-6" strokeWidth={2} />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background border-l border-border">

@@ -205,7 +205,7 @@ const HomePage: React.FC = () => {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why Choose Translate Lux Taxi</h2>
+            <h2 className="text-3xl font-bold mb-4">Why Choose Andevia Transfers</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               We pride ourselves on delivering an exceptional service experience from start to finish.
             </p>

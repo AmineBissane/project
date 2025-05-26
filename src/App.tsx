@@ -21,7 +21,7 @@ const App: React.FC = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div>
-                <h3 className="font-semibold text-lg mb-4">Translate Lux Taxi</h3>
+                <h3 className="font-semibold text-lg mb-4">Andevia Transfers</h3>
                 <p className="text-muted-foreground text-sm">
                   Providing premium transportation services in Luxembourg and beyond since 2018.
                 </p>
@@ -41,7 +41,7 @@ const App: React.FC = () => {
                   <li className="text-muted-foreground">10 Boulevard Royal</li>
                   <li className="text-muted-foreground">L-2449 Luxembourg</li>
                   <li className="text-muted-foreground">+352 123 456 789</li>
-                  <li className="text-muted-foreground">info@translatelux.com</li>
+                  <li className="text-muted-foreground">info@andevia.com</li>
                 </ul>
               </div>
               <div>
@@ -54,7 +54,7 @@ const App: React.FC = () => {
               </div>
             </div>
             <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Translate Lux Taxi. All rights reserved.
+              © {new Date().getFullYear()} Andevia Transfers. All rights reserved.
             </div>
           </div>
         </footer>
