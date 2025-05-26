@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Menu } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -47,8 +47,12 @@ const Navbar = () => {
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Menu className="h-6 w-6" strokeWidth={2} />
+                <Button variant="outline" size="icon" className="border-2 relative p-0 flex items-center justify-center w-10 h-10">
+                  <div className="hamburger-icon w-5 flex flex-col justify-center items-center gap-1">
+                    <div className="w-full h-[3px] bg-current rounded-full"></div>
+                    <div className="w-full h-[3px] bg-current rounded-full"></div>
+                    <div className="w-full h-[3px] bg-current rounded-full"></div>
+                  </div>
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background border-l border-border">
