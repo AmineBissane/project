@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import { CheckCircle, Users, Car, Bus } from 'lucide-react';
 import { Vehicle } from '@/types/booking';
 
@@ -10,6 +9,10 @@ interface CategoryCardProps {
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ vehicle }) => {
+  const handleWhatsAppRedirect = () => {
+    window.open(`https://wa.me/34644004824`, '_blank');
+  };
+
   return (
     <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg group h-full flex flex-col">
       <div className="relative h-48 bg-muted flex items-center justify-center">
@@ -43,8 +46,11 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ vehicle }) => {
             <span className="text-sm text-muted-foreground">Starting from</span>
             <span className="font-bold text-lg">{vehicle.pricePerKm.toFixed(2)} €/km</span>
           </div>
-          <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-            <Link to={`/category/${vehicle.type}`}>Select & Book</Link>
+          <Button 
+            onClick={handleWhatsAppRedirect} 
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+          >
+            Select & Book
           </Button>
         </div>
       </CardFooter>
